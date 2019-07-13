@@ -5,16 +5,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0px;
+  padding: 4px 16px;
+  left: 0;
 
   .fuzzyfood-logo {
     width: 32px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4px 16px;
+  }
 
 }
 
