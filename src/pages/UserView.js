@@ -15,10 +15,10 @@ class UserView extends React.Component {
   }
 
   componentDidMount() {
-    // this.fecthBasket();
+    this.fetchBasket();
   }
 
-  fecthBasket = () => {
+  fetchBasket = () => {
 
     // https://sports.api.decathlon.com/sports/recommendations/geolocation?coordinates=-73.582,45.511&count=3
       return fetch(`https://sports.api.decathlon.com/sports?q=swim`, {
@@ -26,12 +26,13 @@ class UserView extends React.Component {
           headers: {
               "Content-Type": "application/json",
             }
-        }).then((response) => response.json())
+        }).then(response => response.json())
         .then((data) => {
           if (data.error) {
             return false;
             // ERRORs
           } else {
+            console.log(data)
             this.setState({ baskets: data })
           }
         });
@@ -39,14 +40,24 @@ class UserView extends React.Component {
 
 
   addReview = () => {
-
+    this.props.changePage("login")
   }
 
   render() {
+
+    // console.log("username" + this.state.username)
     const { username } = this.props;
+    const allBaskets = this.state.baskets
+    console.log(allBaskets)
     return (
       <React.Fragment>
-        <BasketCard />
+        <div className="user-view-container">
+
+          <h1>hello, bob</h1>
+          <h4>baskets near you :</h4>
+          <BasketCard />
+
+        </div>
       </React.Fragment>
     )
   }
