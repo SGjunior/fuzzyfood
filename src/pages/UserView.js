@@ -1,6 +1,6 @@
 import React from 'react';
 // import { SearchResult} from './components/SearchResult'
-import BasketCard from "../components/BasketCard"
+import BasketsCarousel from "../components/BasketsCarousel"
 
 class UserView extends React.Component {
   constructor(props) {
@@ -55,7 +55,8 @@ class UserView extends React.Component {
 
           <h1>hello, bob</h1>
           <h4>baskets near you :</h4>
-          <BasketCard />
+
+          <BasketsCarousel baskets={allBaskets} />
 
         </div>
       </React.Fragment>
