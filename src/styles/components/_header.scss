@@ -1,11 +1,11 @@
 /*----- COMPONENTS : HEADER -----*/
 
 .main-header {
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: fixed !important;
   top: 0px;
   padding: 4px 16px;
   left: 0;
