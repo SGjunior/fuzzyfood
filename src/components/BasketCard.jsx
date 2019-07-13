@@ -3,6 +3,7 @@ import croissant from "../images/croissant.svg"
 
 class BasketCard extends React.Component {
   render() {
+    const basket = this.props.basket
     return(
       <React.Fragment>
         <div className="basket-card" onClick={() => {this.props.showPopup(this.props.basket_id)}}>
@@ -15,11 +16,10 @@ class BasketCard extends React.Component {
 
           <div className="basket-header">
 
-            <h3>automne</h3>
+            <h3>{basket.retail.name}</h3>
 
             <p className="address">
-              6500 Ave Christophe-Colomb, <br/>
-              Montréal, QC H2S 2G8
+              {basket.retail.adress}
             </p>
 
             <p className="opening">
@@ -31,16 +31,16 @@ class BasketCard extends React.Component {
 
           <div className="basket-content">
 
-            <img src="https://source.unsplash.com/random/400x325" alt=""/>
+            <img src={`https://14be4fe1.ngrok.io/${basket.picture_url}`} alt=""/>
             <p className="content-comment">
-            « we have a batch of smashed strawberry pies that we cannot sell. they will be good until tomorrow, come and pick them up ! »
+            {basket.description}
             </p>
 
           </div>
 
           <div className="basket-footer">
             <p className="basket-comments">7 comments</p>
-            <p className="basket-photos">3 photos</p>
+            <p className="basket-photos"> {Math.floor(Math.random() * 10)} 3 photos</p>
           </div>
 
 

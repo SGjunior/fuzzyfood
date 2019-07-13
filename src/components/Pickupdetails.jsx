@@ -82,13 +82,14 @@ sendComment = (comment) => {
 
     		<span onClick={this.props.closePopup}> close </span>
 
-    		<h1>Restaurant name</h1>
-    		<p>more infos</p>
-    		<p>add comment</p>
+    		<h1>{basket.retail.name}</h1>
+    		<p>{basket.retail.adress}</p>
+        <a href="#comment-form">add a comment</a>
 	    	<div>
-	    		<p>posted at ... by ...</p>
-	    		<img src="https://source.unsplash.com/random/400x325" alt=""/>
-	    		<p style={{textAlign:"left"}}><strong>Basket description:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio molestias quidem ipsa aliquid atque eaque, nulla, vero hic placeat quas eligendi voluptates ducimus consequuntur voluptate excepturi rem eveniet! Ratione, repellat.</p>
+	    		<p>posted at 7:AM</p>
+	    		<img src={`https://14be4fe1.ngrok.io/${basket.picture_url}`} alt=""/>
+	    		<p><strong>Basket description:</strong><br/> {basket.description}</p>
+
 	    	</div>
 
 
@@ -101,15 +102,15 @@ sendComment = (comment) => {
           { basket.comment.map((comment) => {
             return (
               <p>
-              <br/>
               {comment.value}
               </p>
             )
           })}
+
         </div>
 	    	<div className="comments-container">
 	    		<h3>add a comment</h3>
-					<form>
+					<form id="comment-form">
 					  <label>
 					    <p>your comment:</p>
 					    <input className="comments" type="text" name="name" id="comment" />
