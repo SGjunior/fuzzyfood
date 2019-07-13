@@ -1,5 +1,6 @@
 import React from 'react';
 // import { SearchResult} from './components/SearchResult'
+
 import BasketsCarousel from "../components/BasketsCarousel"
 
 class UserView extends React.Component {

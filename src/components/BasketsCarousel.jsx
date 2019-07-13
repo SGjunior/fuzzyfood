@@ -1,6 +1,8 @@
 import React from "react";
-import Slider from "react-slick";
 import BasketCard from "./BasketCard";
+
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 class BasketsCarousel extends React.Component {
 
@@ -14,27 +16,29 @@ class BasketsCarousel extends React.Component {
       console.log('all baskets :', allBaskets.data)
       basketsData = allBaskets.data
     }
-    const sliderSettings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    };
     // console.log('testing baskets:', basketsData)
+
     return(
       <div className="baskets-carousel">
-      { basketsData ?
-        <Slider {...sliderSettings}>
-          {basketsData.data.map( b => <BasketCard key={b.id} />)}
-        </Slider> :
-        <p>there are no basket in your area for the moment.</p>
-      }
+
+      <Carousel
+        showThumbs={false}
+        showIndicators={false}
+        showStatus={false}
+        showArrows={false}
+        infiniteLoop={true}
+        >
+
+        <BasketCard />
+        <BasketCard />
+        <BasketCard />
+
+      </Carousel>
 
       </div>
     )
   }
 }
 
-export default BasketsCarousel
-;
+export default BasketsCarousel;
+
