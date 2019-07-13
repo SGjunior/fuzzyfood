@@ -17,25 +17,31 @@ class App extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log("wedf" + document.getElementById("name").value)
     const username =  document.getElementById("name").value;
 
     this.setState({
         login: !this.state.login,
-        username: username
+        username: username,
+        page: "home"
       })
 
+  }
+
+  changePage = (page) => {
+    this.setState({
+      page: page
+    })
   }
 
   render() {
     const { login, username } = this.state;
 
     return (
-      <div className="App">
+      <div className="app-container">
 
         {login ? <LoginForm onSubmit={this.handleSubmit} /> : <Header />}
 
-        { !login && username === "merchant@email.com" ? <MerchantView /> : <UserView username={username} />}
+        { !login && username === "merchant@email.com" ? <MerchantView /> : <UserView changePage={this.changePage} username={username} />}
 
 
       </div>

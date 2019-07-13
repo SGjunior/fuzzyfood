@@ -1,20 +1,24 @@
 import React from 'react';
 import logo from '../images/mini-logo.svg';
+import menu from "../images/menu.svg"
 
 class Header extends React.Component {
   render() {
     return(
       <header className="main-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          add login
-          # => props le username
+
+      <div className="leftcolum logo">
+        <a href="/">
+          <img src={logo} className="fuzzyfood-logo" alt="logo" />
         </a>
+      </div>
+
+      <div className="right-column navbar">
+
+        <img src={menu} alt=""/>
+
+      </div>
+
       </header>
     )
   }

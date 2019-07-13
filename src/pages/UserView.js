@@ -10,21 +10,15 @@ class UserView extends React.Component {
       baskets: null,
       results: null,
       popup: false,
-      hoursMenuState: false,
-      username: props.username
+      hoursMenuState: false
     }
   }
 
   componentDidMount() {
-    // this.fecthBasket();
+    this.fetchBasket();
   }
 
-  componentWillReceiveProps(prevProps) {
-    this.setState({ username: this.props.username})
-
-  }
-
-  fecthBasket = () => {
+  fetchBasket = () => {
 
     // https://sports.api.decathlon.com/sports/recommendations/geolocation?coordinates=-73.582,45.511&count=3
       return fetch(`https://sports.api.decathlon.com/sports?q=swim`, {
@@ -32,12 +26,13 @@ class UserView extends React.Component {
           headers: {
               "Content-Type": "application/json",
             }
-        }).then((response) => response.json())
+        }).then(response => response.json())
         .then((data) => {
           if (data.error) {
             return false;
             // ERRORs
           } else {
+            console.log(data)
             this.setState({ baskets: data })
           }
         });
@@ -45,16 +40,24 @@ class UserView extends React.Component {
 
 
   addReview = () => {
-
+    this.props.changePage("login")
   }
 
   render() {
 
-    console.log("username" + this.state.username)
+    // console.log("username" + this.state.username)
     const { username } = this.props;
+    const allBaskets = this.state.baskets
+    console.log(allBaskets)
     return (
       <React.Fragment>
-        <BasketCard />
+        <div className="user-view-container">
+
+          <h1>hello, bob</h1>
+          <h4>baskets near you :</h4>
+          <BasketCard />
+
+        </div>
       </React.Fragment>
     )
   }
