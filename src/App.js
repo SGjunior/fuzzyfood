@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './images/logo.svg';
 import './App.css';
 import UserView from './pages/UserView';
+import MerchantView from './pages/UserView';
 import Header from "./components/Header";
 
 class App extends React.Component {
@@ -23,8 +24,7 @@ class App extends React.Component {
 
       {login ? <Header /> : "to do"}
 
-
-
+      {!login && this.state.username === "merchant@email.com" ? <MerchantView /> : <UserView username={this.state.username} />  }
 
       </div>
     );
@@ -32,3 +32,11 @@ class App extends React.Component {
 }
 
 export default App;
+
+        // {
+        //   if (!login && this.state.username === "merchant@email.com") {
+        //     // <MerchantView />
+        //   } else if (!login) {
+        //     <UserView username={this.state.username} />
+        //   }
+        // }
