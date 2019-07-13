@@ -1,0 +1,91 @@
+/*----- LAYOUTS : GENERAL STUFF -----*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: $accent-font;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+// typography
+
+h1, h2, h3, h4 {
+  font-family: $headers-font;
+  margin: 0.8em auto 0.4em
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.8rem;
+}
+
+p, a, li {
+  font-family: $body-font;
+  font-size: 1.6rem;
+  color: $dark-gray;
+}
+
+
+
+
+
+
