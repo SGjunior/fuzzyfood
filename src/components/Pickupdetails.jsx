@@ -11,10 +11,9 @@ class Pickupdetails extends React.Component {
   render() {
     return(
     	<div className="container">
-    		<br/>
-    		<br/>
-    		<br/>
-    		<span onClick={this.props.closePopup}> test </span>
+
+    		<span onClick={this.props.closePopup}> close </span>
+
     		<h1>Restaurant name</h1>
     		<p>more infos</p>
     		<p>add comment</p>
