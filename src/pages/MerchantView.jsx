@@ -1,8 +1,7 @@
 import React from 'react';
 // import { SearchResult} from './components/SearchResult'
-import BasketCard from "../components/BasketCard"
 
-class UserView extends React.Component {
+class MerchantView extends React.Component {
   constructor(props) {
     super(props);
 
@@ -46,13 +45,13 @@ class UserView extends React.Component {
     const { username } = this.props;
     return (
       <React.Fragment>
-        <BasketCard />
+        hello world
       </React.Fragment>
     )
   }
 }
 
-export default UserView;
+export default MerchantView;
 
 
   // // 1. Fetch list of customers matchin input values.
