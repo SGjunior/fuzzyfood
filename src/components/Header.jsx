@@ -7,10 +7,8 @@ class Header extends React.Component {
     return(
       <header className="main-header">
 
-      <div className="leftcolum logo">
-        <a href="/">
+      <div className="left-column logo">
           <img src={logo} className="fuzzyfood-logo" alt="logo" />
-        </a>
       </div>
 
       <div className="right-column navbar">

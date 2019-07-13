@@ -2,16 +2,17 @@
 
 .main-header {
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0px;
   padding: 4px 16px;
+  left: 0;
 
   .fuzzyfood-logo {
-    width: 24px;
+    width: 32px;
   }
+
 }
 
