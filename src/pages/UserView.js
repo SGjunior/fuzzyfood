@@ -33,7 +33,7 @@ class UserView extends React.Component {
             // ERRORs
           } else {
             console.log('new data', data)
-            this.setState({ baskets: data })
+            this.setState({ baskets: JSON.stringify(data) })
           }
         }
       );
@@ -48,7 +48,7 @@ class UserView extends React.Component {
 
     // console.log("username" + this.state.username)
     const { username } = this.props;
-    const allBaskets = this.state.baskets
+    const allBaskets = JSON.parse(this.state.baskets)
     return (
       <React.Fragment>
         <div className="user-view-container">

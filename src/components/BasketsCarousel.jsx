@@ -9,8 +9,10 @@ class BasketsCarousel extends React.Component {
     // need to add that condition because
     // baskets is null (see state in app)
     // at the beginning
+    let basketsData
     if (allBaskets) {
-      console.log('all baskets :', typeof allBaskets.data)
+      console.log('all baskets :', allBaskets.data)
+      basketsData = allBaskets.data
     }
     const sliderSettings = {
       dots: true,
@@ -19,11 +21,12 @@ class BasketsCarousel extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1
     };
+    // console.log('testing baskets:', basketsData)
     return(
       <div className="baskets-carousel">
-      { allBaskets ?
+      { basketsData ?
         <Slider {...sliderSettings}>
-          {allBaskets.data.map( b => <BasketCard key={b.id} />)}
+          {basketsData.data.map( b => <BasketCard key={b.id} />)}
         </Slider> :
         <p>there are no basket in your area for the moment.</p>
       }
