@@ -1,4 +1,5 @@
 import React from 'react';
+import ImageUpload from './ImageUpload';
 
 class Pickupdetails extends React.Component {
 	constructor(props) {
@@ -10,7 +11,9 @@ class Pickupdetails extends React.Component {
   render() {
     return(
     	<div className="container">
+
     		<span onClick={this.props.closePopup}> close </span>
+
     		<h1>Restaurant name</h1>
     		<p>more infos</p>
     		<p>add comment</p>
@@ -31,6 +34,7 @@ class Pickupdetails extends React.Component {
 					    <input className="comments" type="text" name="name" />
 					  </label>
 					  <input className="btn-primary" type="submit" value="ADD A COMMENT" />
+            <ImageUpload />
 					  <button className="btn-primary"> BACK TO HOMEPAGE</button>
 					</form>
 	    	</div>
