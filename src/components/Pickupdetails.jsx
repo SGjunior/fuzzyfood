@@ -91,6 +91,9 @@ sendComment = (comment) => {
       <React.Fragment>
 
     	<div className="container">
+
+    		<h1>{basket.retail.name}</h1>
+    		<p>{basket.retail.adress}</p>
 	    	<div>
 					<button onClick={this.togglePopup.bind(this)}> <p>more info</p></button>
 					{
@@ -104,9 +107,6 @@ sendComment = (comment) => {
 						)
 					}
 				</div>
-
-    		<h1>{basket.retail.name}</h1>
-    		<p>{basket.retail.adress}</p>
         <a href="#comment-form">add a comment</a>
 
 
