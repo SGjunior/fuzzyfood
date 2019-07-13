@@ -1,6 +1,7 @@
 import React from 'react';
 // import { SearchResult} from './components/SearchResult'
 import BasketCard from "../components/BasketCard"
+import ImageUpload from '../components/ImageUpload'
 
 class UserView extends React.Component {
   constructor(props) {
@@ -46,7 +47,15 @@ class UserView extends React.Component {
     const { username } = this.props;
     return (
       <React.Fragment>
-        <BasketCard />
+        { /* <BasketCard /> */ }
+        <br/>
+        <hr/>
+        <br/>
+          <ImageUpload />
+        <br/>
+        <br/>
+
+
       </React.Fragment>
     )
   }

@@ -1,0 +1,18 @@
+.loadingIconCircle {
+  color: white;
+  animation: 1.5s rotateRight linear 0s infinite;
+  font-size: 10vh;
+  // text-align: center;
+  // margin-right: auto;
+  // margin-left: auto;
+
+}
+
+@keyframes rotateRight {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
