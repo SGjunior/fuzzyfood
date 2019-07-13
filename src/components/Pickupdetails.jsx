@@ -1,13 +1,22 @@
 import React from 'react';
 import ImageUpload from './ImageUpload';
+import Popup from './Popup';
 
 class Pickupdetails extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-      basket: this.props.basket
+			showPopup: false
+       basket: this.props.basket
 		}
 	}
+
+	togglePopup() {
+		this.setState({
+		   showPopup: !this.state.showPopup
+		});
+	}
+
 
   handleFormUpload = (event) => {
     event.preventDefault();
@@ -78,18 +87,32 @@ sendComment = (comment) => {
 
 
     return(
-    	<div className="container">
+      <React.Fragment>
 
-    		<span onClick={this.props.closePopup}> close </span>
+    	<div className="container">
+	    	<div>
+					<button onClick={this.togglePopup.bind(this)}> <p>more info</p></button>
+					{
+						this.state.showPopup && (
+							<Popup
+								text="hackerfest
+									<h3>65 Chemin des Floralies</h3>
+									<p>open hours: right now</p>"
+			          closePopup={this.togglePopup.bind(this)}
+							/>
+						)
+					}
+				</div>
 
     		<h1>{basket.retail.name}</h1>
     		<p>{basket.retail.adress}</p>
         <a href="#comment-form">add a comment</a>
+
+
 	    	<div>
 	    		<p>posted at 7:AM</p>
 	    		<img src={`https://14be4fe1.ngrok.io/${basket.picture_url}`} alt=""/>
 	    		<p><strong>Basket description:</strong><br/> {basket.description}</p>
-
 	    	</div>
 
 
@@ -120,6 +143,8 @@ sendComment = (comment) => {
 					</form>
 	    	</div>
     	</div>
+						</React.Fragment>
+
     )
   }
 }
