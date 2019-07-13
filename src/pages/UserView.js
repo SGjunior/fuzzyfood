@@ -82,7 +82,8 @@ class UserView extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="user-view-container">
+
+        <div className="user-view-container container">
         {
           this.state.popup  === 0 && (
             <React.Fragment>
