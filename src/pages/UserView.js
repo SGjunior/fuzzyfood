@@ -1,5 +1,6 @@
 import React from 'react';
-import { SearchResult} from './components/SearchResult'
+// import { SearchResult} from './components/SearchResult'
+
 class UserView extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +20,7 @@ class UserView extends React.Component {
   fecthBasket = () => {
 
     // https://sports.api.decathlon.com/sports/recommendations/geolocation?coordinates=-73.582,45.511&count=3
-      return fetch(`https://sports.api.decathlon.com/sports?q=${}`, {
+      return fetch(`https://sports.api.decathlon.com/sports?q=swim`, {
           method: "GET",
           headers: {
               "Content-Type": "application/json",

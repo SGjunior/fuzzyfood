@@ -1,9 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './images/logo.svg';
 import './App.css';
 import UserView from './pages/UserView';
+import Header from "./components/Header";
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
 
@@ -13,39 +14,18 @@ class App extends Component {
       login: true
     }
   }
+
   render() {
-    const { login } = this.state;
+    const login = this.state.login;
 
     return (
       <div className="App">
-      { if (login) {
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-            add login
-            # => props le username
-          </a>
-        </header>
-        }
-      }
+
+      {login ? <Header /> : "to do"}
 
 
-        {
-          if (!login && this.state.username === "merchant@email.com") {
-            // <MerchantView />
-          } else if (!login) {
-            <UserView username={this.state.username} />
-          }
-        }
+
+
       </div>
     );
   }
