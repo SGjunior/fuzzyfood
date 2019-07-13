@@ -19,7 +19,7 @@ class BasketsCarousel extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1
     };
-    return(
+    return( 
       <div className="baskets-carousel">
       { allBaskets ?
         <Slider {...sliderSettings}>
