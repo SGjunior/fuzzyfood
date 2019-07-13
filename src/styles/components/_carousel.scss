@@ -50,17 +50,19 @@
     top: 0;
     left: 0;
     display: block;
+    width: 40px !important;
 }
 
 .slick-track:before,
 .slick-track:after {
     display: table;
-
     content: '';
 }
+
 .slick-track:after {
     clear: both;
 }
+
 .slick-loading .slick-track {
     visibility: hidden;
 }
@@ -79,31 +81,34 @@
 .slick-slide img {
     display: block;
 }
+
 .slick-slide.slick-loading img {
     display: none;
 }
+
 .slick-slide.dragging img {
     pointer-events: none;
 }
+
 .slick-initialized .slick-slide {
     display: block;
 }
+
 .slick-loading .slick-slide {
     visibility: hidden;
 }
+
 .slick-vertical .slick-slide {
     display: block;
-
     height: auto;
-
     border: 1px solid transparent;
 }
+
 .slick-arrow.slick-hidden {
     display: none;
 }
 
 
-@charset 'UTF-8';
 /* Slider */
 .slick-loading .slick-list {
     background: #fff url('./ajax-loader.gif') center center no-repeat;
@@ -114,35 +119,31 @@
     font-family: 'slick';
     font-weight: normal;
     font-style: normal;
-
     src: url('./fonts/slick.eot');
     src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
 }
+
 /* Arrows */
 .slick-prev,
 .slick-next {
     font-size: 0;
     line-height: 0;
-
     position: absolute;
-    top: 50%;
-
+    top: 0;
     display: block;
-
     width: 20px;
     height: 20px;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
-
     cursor: pointer;
-
     color: transparent;
     border: none;
     outline: none;
     background: transparent;
 }
+
 .slick-prev:hover,
 .slick-prev:focus,
 .slick-next:hover,
@@ -176,10 +177,10 @@
 }
 
 .slick-prev {
-    left: -25px;
+    left: 0;
 }
 [dir='rtl'] .slick-prev {
-    right: -25px;
+    right: 0;
     left: auto;
 }
 .slick-prev:before {
@@ -190,11 +191,11 @@
 }
 
 .slick-next {
-    right: -25px;
+    right: 0px;
 }
 [dir='rtl'] .slick-next {
     right: auto;
-    left: -25px;
+    left: 0px;
 }
 .slick-next:before {
     content: 'â†’';
