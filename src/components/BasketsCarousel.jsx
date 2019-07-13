@@ -25,7 +25,7 @@ class BasketsCarousel extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1
     };
-    return( 
+    return(
 
       <div className="baskets-carousel">
 
@@ -38,7 +38,7 @@ class BasketsCarousel extends React.Component {
         >
 
         {basketsData ?
-          basketsData.map( b => <BasketCard basket={b} key={b.id} /> ) :
+          basketsData.map( b => <BasketCard basket={b} basket_id={b.id} key={b.id} showPopup={this.props.showPopup} /> ) :
           <h4>there are no basket for the moment.</h4>}
 
 

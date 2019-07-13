@@ -5,7 +5,7 @@ class BasketCard extends React.Component {
   render() {
     return(
       <React.Fragment>
-        <div className="basket-card">
+        <div className="basket-card" onClick={() => {this.props.showPopup(this.props.basket_id)}}>
 
           <div className="basket-icon">
 

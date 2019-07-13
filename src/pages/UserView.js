@@ -11,7 +11,7 @@ class UserView extends React.Component {
     this.state = {
       baskets: null,
       results: null,
-      popup: 224,
+      popup: 0,
       hoursMenuState: false
     }
   }
@@ -34,7 +34,7 @@ class UserView extends React.Component {
             return false;
             // ERRORs
           } else {
-            console.log('new data', data)
+            console.log('raw data : ', data)
             this.setState({ baskets: JSON.stringify(data) })
           }
         }
@@ -42,43 +42,42 @@ class UserView extends React.Component {
     }
 
     showPopup = (popupId) => {
-      // get clicked basket id
+      // set the state with the id of the retail
       this.setState({ popup: popupId })
     }
 
 
     closePopup = (e) => {
-      // get clicked basket id
+      // set the popup state back to 0
       this.setState({ popup: 0 })
     }
 
-  addReview = () => {
-    this.props.changePage("login")
-  }
+    addReview = () => {
+      this.props.changePage("login")
+    }
 
   render() {
 
-    // console.log("username" + this.state.username)
     const { username } = this.props;
+    const allBaskets = JSON.parse(this.state.baskets)
 
-    const allBaskets = this.state.baskets
-    console.log(allBaskets)
 
+    //pop up logic
     let basket = null;
     if (allBaskets) {
+      console.log('all baskets from json :', allBaskets["data"])
       basket = allBaskets["data"].find((basket) => {
         return basket.id === this.state.popup
-      })  
+      })
     }
-    console.log("basket")
-    console.log(basket)
 
 
-    let allBaskets = []
-    if (allBaskets) {
-      allBaskets = JSON.parse(this.state.baskets)
-    }
-    // console.log('sdfgh', allBaskets)
+    // let basketsRawData = []
+    // console.log('basket raw data :', basketsRawData)
+    // if (basketsRawData) {
+    //   basketsRawData = JSON.parse(this.state.baskets)
+    // }
+
 
     return (
       <React.Fragment>
@@ -89,7 +88,7 @@ class UserView extends React.Component {
             <React.Fragment>
               <h1>hello, bob</h1>
               <h4>baskets near you :</h4>
-               <BasketsCarousel baskets={allBaskets}/>}
+               <BasketsCarousel baskets={allBaskets} showPopup={this.showPopup} />
             </React.Fragment>
           )
         }
