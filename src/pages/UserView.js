@@ -1,6 +1,6 @@
 import React from 'react';
 // import { SearchResult} from './components/SearchResult'
-import BasketCard from "../components/BasketCard"
+import Pickupdetails from "../components/Pickupdetails"
 
 class UserView extends React.Component {
   constructor(props) {
@@ -46,7 +46,7 @@ class UserView extends React.Component {
     const { username } = this.props;
     return (
       <React.Fragment>
-        <BasketCard />
+        <Pickupdetails />
       </React.Fragment>
     )
   }
