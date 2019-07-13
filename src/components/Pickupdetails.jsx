@@ -6,7 +6,7 @@ class Pickupdetails extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			showPopup: false
+			showPopup: false,
        basket: this.props.basket
 		}
 	}
@@ -45,6 +45,7 @@ class Pickupdetails extends React.Component {
 
     //     this.setState({ basket: data })
     // }))
+    document.getElementById("comment").value = " "
 
   }
 
