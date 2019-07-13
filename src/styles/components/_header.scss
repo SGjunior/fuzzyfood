@@ -1,0 +1,14 @@
+/*----- COMPONENTS : HEADER -----*/
+
+.main-header {
+  width: 100%;
+  border: 3px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .fuzzyfood-logo {
+    width: 32px;
+  }
+}
+
