@@ -93,7 +93,7 @@ class UserView extends React.Component {
           )
         }
 
-        {this.state.popup  > 0 && <Pickupdetails basket={basket} closePopup={this.closePopup } />}
+        {(this.state.popup  > 0 && basket) && ( <Pickupdetails basket={basket} closePopup={this.closePopup } /> )}
 
         </div>
       </React.Fragment>
