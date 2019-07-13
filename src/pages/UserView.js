@@ -22,7 +22,7 @@ class UserView extends React.Component {
   fetchBasket = () => {
 
     // https://sports.api.decathlon.com/sports/recommendations/geolocation?coordinates=-73.582,45.511&count=3
-      return fetch(`https://sports.api.decathlon.com/sports?q=swim`, {
+      return fetch(`https://14be4fe1.ngrok.io/baskets`, {
           method: "GET",
           headers: {
               "Content-Type": "application/json",
@@ -33,10 +33,11 @@ class UserView extends React.Component {
             return false;
             // ERRORs
           } else {
-            console.log(data)
-            this.setState({ baskets: data })
+            console.log('new data', data)
+            this.setState({ baskets: JSON.stringify(data) })
           }
-        });
+        }
+      );
     }
 
 
@@ -48,8 +49,11 @@ class UserView extends React.Component {
 
     // console.log("username" + this.state.username)
     const { username } = this.props;
-    const allBaskets = this.state.baskets
-    console.log(allBaskets)
+    let allBaskets = []
+    if (allBaskets) {
+      allBaskets = JSON.parse(this.state.baskets)
+    }
+    // console.log('sdfgh', allBaskets)
     return (
       <React.Fragment>
         <div className="user-view-container">
