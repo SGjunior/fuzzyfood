@@ -34,8 +34,8 @@ class Pickupdetails extends React.Component {
 					    <input className="comments" type="text" name="name" />
 					  </label>
 					  <input className="btn-primary" type="submit" value="ADD A COMMENT" />
+					  <button className="btn-secondary"> back to homepage</button>
             <ImageUpload />
-					  <button className="btn-primary"> BACK TO HOMEPAGE</button>
 					</form>
 	    	</div>
     	</div>
