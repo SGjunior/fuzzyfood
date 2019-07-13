@@ -23,7 +23,7 @@ class App extends React.Component {
       <div className="App">
 
       {login ? <Header /> : "to do"}
-
+      
       { !login && username === "merchant@email.com" ? <MerchantView /> : <UserView username={this.state.username} />}
 
 
