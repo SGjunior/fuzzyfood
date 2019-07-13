@@ -2,7 +2,7 @@
 
 
 .basket-card {
-  width: 80%;
+  width: 90%;
   padding: 12px;
   margin: 24px auto;
   background: white;
@@ -52,12 +52,12 @@
 }
 
 .basket-content {
-  .comment {
+  .content-comment {
     color: $medium-gray;
     position: relative;
   }
 
-  .comment:after {
+  .content-comment:after {
     content: " ";
     background-color: $light-gray;
     width: 20%;

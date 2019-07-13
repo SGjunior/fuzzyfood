@@ -56,7 +56,7 @@ class UserView extends React.Component {
     // console.log('sdfgh', allBaskets)
     return (
       <React.Fragment>
-        <div className="user-view-container">
+        <div className="user-view-container container">
 
           <h1>hello, bob</h1>
           <h4>baskets near you :</h4>

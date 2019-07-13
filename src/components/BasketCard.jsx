@@ -32,15 +32,15 @@ class BasketCard extends React.Component {
           <div className="basket-content">
 
             <img src="https://source.unsplash.com/random/400x325" alt=""/>
-            <p className="comment">
+            <p className="content-comment">
             « we have a batch of smashed strawberry pies that we cannot sell. they will be good until tomorrow, come and pick them up ! »
             </p>
 
           </div>
 
           <div className="basket-footer">
-            <p className="comments">7 comments</p>
-            <p className="photos">3 photos</p>
+            <p className="basket-comments">7 comments</p>
+            <p className="basket-photos">3 photos</p>
           </div>
 
 
