@@ -7,14 +7,15 @@ import { Carousel } from 'react-responsive-carousel';
 class BasketsCarousel extends React.Component {
 
   render() {
-    const allBaskets = this.props.baskets
+    const rawBasketsData = this.props.baskets
     // need to add that condition because
     // baskets is null (see state in app)
     // at the beginning
     let basketsData
-    if (allBaskets) {
-      console.log('all baskets :', allBaskets.data)
-      basketsData = allBaskets.data
+
+    if (rawBasketsData) {
+      console.log('all baskets :', rawBasketsData.data)
+      basketsData = rawBasketsData.data
     }
     // console.log('testing baskets:', basketsData)
 

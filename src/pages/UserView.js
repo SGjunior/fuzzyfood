@@ -49,7 +49,11 @@ class UserView extends React.Component {
 
     // console.log("username" + this.state.username)
     const { username } = this.props;
-    const allBaskets = JSON.parse(this.state.baskets)
+    let allBaskets = []
+    if (allBaskets) {
+      allBaskets = JSON.parse(this.state.baskets)
+    }
+    // console.log('sdfgh', allBaskets)
     return (
       <React.Fragment>
         <div className="user-view-container">
