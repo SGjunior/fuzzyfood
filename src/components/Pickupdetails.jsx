@@ -116,7 +116,6 @@ sendComment = (comment) => {
 					  </label>
 					  <input className="btn-primary" type="submit" value="ADD A COMMENT" onClick={this.handleFormUpload}/>
 					  <button className="btn-secondary"> back to homepage</button>
-            <ImageUpload />
 					</form>
 	    	</div>
     	</div>
