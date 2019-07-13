@@ -19,11 +19,17 @@ class UserView extends React.Component {
   componentDidMount() {
     // this.fecthBasket();
   }
-
-  componentWillReceiveProps(prevProps) {
-    this.setState({ username: this.props.username})
-
+  componentDidUpdate(prevProps) {
+    console.log("component did update");
+    if (prevProps !== this.props) {
+      this.setState({ username: this.props.username});
+    }
   }
+  // componentWillReceiveProps(prevProps) {
+  //   console.log("I'll receive props")
+  //   this.setState({ username: this.props.username})
+
+  // }
 
   fecthBasket = () => {
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Spinner from './Spinner'
-// import Images from './Images'
-// import Buttons from './Buttons'
+import Images from './Images'
+import Buttons from './Buttons'
 // import { API_URL } from './config'
 // import './App.css'
 
@@ -9,7 +9,8 @@ class ImageUpload extends Component {
 
   state = {
     uploading: false,
-    images: []
+    images: [],
+    basket_id: null
   }
 
   onChange = e => {
@@ -49,7 +50,7 @@ class ImageUpload extends Component {
         case uploading:
           return <Spinner />
         case images.length > 0:
-          // return <Images images={images} removeImage={this.removeImage} />
+          return <Images images={images} removeImage={this.removeImage} />
           return 'hello world';
         default:
           return <input type="button" onChange={this.onChange} />

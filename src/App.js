@@ -18,7 +18,7 @@ class App extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     console.log("wedf" + document.getElementById("name").value)
-    const username =  document.getElementById("name").value;
+    const username = document.getElementById("name").value;
 
     this.setState({
         login: !this.state.login,
