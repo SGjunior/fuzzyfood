@@ -2,6 +2,7 @@ import React from 'react';
 // import { SearchResult} from './components/SearchResult'
 
 import BasketsCarousel from "../components/BasketsCarousel"
+import Pickupdetails from "../components/Pickupdetails"
 
 class UserView extends React.Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class UserView extends React.Component {
     this.state = {
       baskets: null,
       results: null,
-      popup: false,
+      popup: 224,
       hoursMenuState: false
     }
   }
@@ -40,6 +41,16 @@ class UserView extends React.Component {
       );
     }
 
+    showPopup = (popupId) => {
+      // get clicked basket id
+      this.setState({ popup: popupId })
+    }
+
+
+    closePopup = (e) => {
+      // get clicked basket id
+      this.setState({ popup: 0 })
+    }
 
   addReview = () => {
     this.props.changePage("login")
@@ -49,19 +60,40 @@ class UserView extends React.Component {
 
     // console.log("username" + this.state.username)
     const { username } = this.props;
+
+    const allBaskets = this.state.baskets
+    console.log(allBaskets)
+
+    let basket = null;
+    if (allBaskets) {
+      basket = allBaskets["data"].find((basket) => {
+        return basket.id === this.state.popup
+      })  
+    }
+    console.log("basket")
+    console.log(basket)
+
+
     let allBaskets = []
     if (allBaskets) {
       allBaskets = JSON.parse(this.state.baskets)
     }
     // console.log('sdfgh', allBaskets)
+
     return (
       <React.Fragment>
         <div className="user-view-container">
+        {
+          this.state.popup  === 0 && (
+            <React.Fragment>
+              <h1>hello, bob</h1>
+              <h4>baskets near you :</h4>
+               <BasketsCarousel baskets={allBaskets}/>}
+            </React.Fragment>
+          )
+        }
 
-          <h1>hello, bob</h1>
-          <h4>baskets near you :</h4>
-
-          <BasketsCarousel baskets={allBaskets} />
+        {this.state.popup  > 0 && <Pickupdetails basket={basket} closePopup={this.closePopup } />}
 
         </div>
       </React.Fragment>
