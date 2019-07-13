@@ -5,16 +5,24 @@ class Header extends React.Component {
   render() {
     return(
       <header className="main-header">
-        <img src={logo} className="App-logo" alt="logo" />
+
+      <div className="leftcolum logo">
         <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          add login
-          # => props le username
+          <img src={logo} className="fuzzyfood-logo" alt="logo" />
         </a>
+      </div>
+
+      <div className="right-column navbar">
+
+      menu
+
+      </div>
+
       </header>
     )
   }

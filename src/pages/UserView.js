@@ -10,18 +10,12 @@ class UserView extends React.Component {
       baskets: null,
       results: null,
       popup: false,
-      hoursMenuState: false,
-      username: props.username
+      hoursMenuState: false
     }
   }
 
   componentDidMount() {
     // this.fecthBasket();
-  }
-
-  componentWillReceiveProps(prevProps) {
-    this.setState({ username: this.props.username})
-
   }
 
   fecthBasket = () => {
