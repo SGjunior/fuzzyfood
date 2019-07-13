@@ -1,5 +1,19 @@
 /*----- COMPONENTS : BUTTONS -----*/
 
+input.btn-primary {
+  background: $primary;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: $headers-font;
+  font-size: 1.8rem;
+  padding: 5px;
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 16px;
+
+}
+
 button.btn-primary,
 a.btn-primary,
 .btn-primary {

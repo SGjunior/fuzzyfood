@@ -17,9 +17,16 @@ class BasketsCarousel extends React.Component {
       console.log('all baskets :', rawBasketsData.data)
       basketsData = rawBasketsData.data
     }
-    // console.log('testing baskets:', basketsData)
 
-    return(
+    const sliderSettings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
+    return( 
+
       <div className="baskets-carousel">
 
       <Carousel
