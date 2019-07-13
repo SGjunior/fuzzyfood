@@ -52,7 +52,7 @@ class ImageUpload extends Component {
           // return <Images images={images} removeImage={this.removeImage} />
           return 'hello world';
         default:
-          return <input type="button" onChange={this.onChange}> upload img</input>
+          return <input type="button" onChange={this.onChange} />
           // return 'hello world';
       }
     }

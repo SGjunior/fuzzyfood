@@ -47,7 +47,7 @@ class UserView extends React.Component {
     const { username } = this.props;
     return (
       <React.Fragment>
-        { /* <BasketCard /> */ }
+        { <BasketCard />  }
         <br/>
         <hr/>
         <br/>
