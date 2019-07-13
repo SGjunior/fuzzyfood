@@ -1,6 +1,18 @@
 /*----- COMPONENTS : HEADER -----*/
 
 .main-header {
-  width: 100%;
-  border: 3px solid red;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed !important;
+  top: 0px;
+  padding: 4px 16px;
+  left: 0;
+
+  .fuzzyfood-logo {
+    width: 32px;
+  }
+
 }
+

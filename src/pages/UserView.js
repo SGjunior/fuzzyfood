@@ -3,6 +3,8 @@ import React from 'react';
 import BasketCard from "../components/BasketCard"
 import ImageUpload from '../components/ImageUpload'
 
+import BasketsCarousel from "../components/BasketsCarousel"
+
 class UserView extends React.Component {
   constructor(props) {
     super(props);
@@ -11,14 +13,14 @@ class UserView extends React.Component {
       baskets: null,
       results: null,
       popup: false,
-      hoursMenuState: false,
-      username: props.username
+      hoursMenuState: false
     }
   }
 
   componentDidMount() {
-    // this.fecthBasket();
+    this.fetchBasket();
   }
+<<<<<<< HEAD
   componentDidUpdate(prevProps) {
     console.log("component did update");
     if (prevProps !== this.props) {
@@ -32,35 +34,47 @@ class UserView extends React.Component {
   // }
 
   fecthBasket = () => {
+=======
+
+  fetchBasket = () => {
+>>>>>>> 2e823af3e146b4f07797c58addbe6d21d4f294ed
 
     // https://sports.api.decathlon.com/sports/recommendations/geolocation?coordinates=-73.582,45.511&count=3
-      return fetch(`https://sports.api.decathlon.com/sports?q=swim`, {
+      return fetch(`https://14be4fe1.ngrok.io/baskets`, {
           method: "GET",
           headers: {
               "Content-Type": "application/json",
             }
-        }).then((response) => response.json())
+        }).then(response => response.json())
         .then((data) => {
           if (data.error) {
             return false;
             // ERRORs
           } else {
-            this.setState({ baskets: data })
+            console.log('new data', data)
+            this.setState({ baskets: JSON.stringify(data) })
           }
-        });
+        }
+      );
     }
 
 
   addReview = () => {
-
+    this.props.changePage("login")
   }
 
   render() {
 
-    console.log("username" + this.state.username)
+    // console.log("username" + this.state.username)
     const { username } = this.props;
+    let allBaskets = []
+    if (allBaskets) {
+      allBaskets = JSON.parse(this.state.baskets)
+    }
+    // console.log('sdfgh', allBaskets)
     return (
       <React.Fragment>
+<<<<<<< HEAD
         { <BasketCard />  }
         <br/>
         <hr/>
@@ -70,6 +84,16 @@ class UserView extends React.Component {
         <br/>
 
 
+=======
+        <div className="user-view-container">
+
+          <h1>hello, bob</h1>
+          <h4>baskets near you :</h4>
+
+          <BasketsCarousel baskets={allBaskets} />
+
+        </div>
+>>>>>>> 2e823af3e146b4f07797c58addbe6d21d4f294ed
       </React.Fragment>
     )
   }
