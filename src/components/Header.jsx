@@ -4,7 +4,7 @@ import logo from '../images/mini-logo.svg';
 class Header extends React.Component {
   render() {
     return(
-      <header className="App-header">
+      <header className="main-header">
         <img src={logo} className="App-logo" alt="logo" />
         <a
           className="App-link"

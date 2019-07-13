@@ -1,0 +1,44 @@
+/*----- COMPONENTS : LOGIN FORM -----*/
+
+.login-form-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  padding: 24px;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  label {
+    text-align: left;
+    font-family: $accent-font;
+    color: $gray;
+    font-size: 1.4rem;
+    margin: 12px 0;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    background: $white-gray;
+    border: none;
+    height: 3.2rem;
+    font-family: $accent-font;
+    padding-left: 4px;
+  }
+
+  input:active,
+  input:focus {
+    outline: none;
+    background: $primary;
+    color: $dark-gray;
+  }
+
+  button {
+    margin: 24px 0;
+  }
+}
