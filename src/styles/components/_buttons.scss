@@ -1,0 +1,21 @@
+/*----- COMPONENTS : BUTTONS -----*/
+
+button.btn-primary,
+a.btn-primary,
+.btn-primary {
+  background: $primary;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: $headers-font;
+  font-size: 1.8rem;
+  padding: 4px 0;
+}
+
+
+.btn-primary a {
+  text-transform: uppercase;
+  font-family: $headers-font;
+  font-size: 1.8rem;
+
+}
