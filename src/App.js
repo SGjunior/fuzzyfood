@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './images/logo.svg';
 import './styles/index.scss';
 import UserView from './pages/UserView';
 import MerchantView from './pages/UserView';
@@ -22,8 +21,8 @@ class App extends React.Component {
     return (
       <div className="App">
 
-      {login ? <Header /> : "to do"}
-      
+      {login ? <Header /> : <Header />}
+
       { !login && username === "merchant@email.com" ? <MerchantView /> : <UserView username={this.state.username} />}
 
 

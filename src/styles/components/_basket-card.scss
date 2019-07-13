@@ -1,0 +1,80 @@
+/*----- COMPONENTS : BASKET-CARD-----*/
+
+
+.basket-card {
+  width: 80%;
+  padding: 12px;
+  margin: 24px auto;
+  background: white;
+  box-shadow: 4px 4px 24px rgba(200,201,204,0.3);
+  text-align: left;
+  position: relative;
+}
+
+.basket-icon {
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  background: $primary;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.basket-header {
+
+  h3 {
+    text-align: center;
+    color: $primary;
+    margin-top: 0.2em;
+  }
+
+  .address {
+    font-size: 1.8rem;
+  }
+
+  .opening {
+    display: flex;
+    flex-direction: column;
+    color: $medium-gray;
+  }
+
+  .today {
+    text-transform: uppercase;
+  }
+}
+
+.basket-content {
+  .comment {
+    color: $medium-gray;
+    position: relative;
+  }
+
+  .comment:after {
+    content: " ";
+    background-color: $light-gray;
+    width: 20%;
+    height: 1px;
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+  }
+}
+
+.basket-footer {
+  p {
+    color: $light-gray;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+}
+
+
+
+
+
+
