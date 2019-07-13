@@ -1,13 +1,22 @@
 import React from 'react';
 import ImageUpload from './ImageUpload';
+import Popup from './Popup';
 
 class Pickupdetails extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-      basket: this.props.basket
+			showPopup: false
+       basket: this.props.basket
 		}
 	}
+
+	togglePopup() {  
+		this.setState({  
+		   showPopup: !this.state.showPopup  
+		});  
+	}
+
 
   handleFormUpload = (event) => {
     event.preventDefault();
@@ -78,12 +87,28 @@ sendComment = (comment) => {
 
 
     return(
+
+						<React.Fragment>
+    	
+
     	<div className="container">
-
     		<span onClick={this.props.closePopup}> close </span>
-
     		<h1>Restaurant name</h1>
-    		<p>more infos</p>
+
+	    	<div>  
+					<button onClick={this.togglePopup.bind(this)}> <p>more info</p></button>  
+					{
+						this.state.showPopup && (
+							<Popup  
+								text="hackerfest
+									<h3>65 Chemin des Floralies</h3>
+									<p>open hours: right now</p>" 
+			          closePopup={this.togglePopup.bind(this)} 
+							/>  
+						)
+					}  
+				</div> 
+
     		<p>add comment</p>
 	    	<div>
 	    		<p>posted at ... by ...</p>
@@ -119,6 +144,8 @@ sendComment = (comment) => {
 					</form>
 	    	</div>
     	</div>
+						</React.Fragment>
+
     )
   }
 }
