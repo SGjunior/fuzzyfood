@@ -4,6 +4,8 @@ import croissant from "../images/croissant.svg"
 class BasketCard extends React.Component {
   render() {
     const basket = this.props.basket
+    console.log("rendering basket vcard props")
+    console.log(this.props)
     return(
       <React.Fragment>
         <div className="basket-card" onClick={() => {this.props.showPopup(this.props.basket_id)}}>

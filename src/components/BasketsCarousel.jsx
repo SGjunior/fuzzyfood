@@ -11,11 +11,11 @@ class BasketsCarousel extends React.Component {
     // need to add that condition because
     // baskets is null (see state in app)
     // at the beginning
-    let basketsData
+    let basketsData = null;
 
     if (rawBasketsData) {
-      console.log('all baskets :', rawBasketsData.data)
-      basketsData = rawBasketsData.data
+      console.log('all baskets (carrousel) :', rawBasketsData)
+      basketsData = rawBasketsData
     }
 
     const sliderSettings = {

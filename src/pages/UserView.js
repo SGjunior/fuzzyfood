@@ -23,7 +23,7 @@ class UserView extends React.Component {
   fetchBasket = () => {
 
     // https://sports.api.decathlon.com/sports/recommendations/geolocation?coordinates=-73.582,45.511&count=3
-      return fetch(`https://14be4fe1.ngrok.io/baskets`, {
+      return fetch(`https://floating-beach-89597.herokuapp.com/baskets`, {
           method: "GET",
           headers: {
               "Content-Type": "application/json",
@@ -34,8 +34,8 @@ class UserView extends React.Component {
             return false;
             // ERRORs
           } else {
-            console.log('raw data : ', data)
-            this.setState({ baskets: JSON.stringify(data) })
+            console.log('raw data : ', JSON.parse(data["data"]))
+            this.setState({ baskets: JSON.parse(data["data"]) })
           }
         }
       );
@@ -59,14 +59,16 @@ class UserView extends React.Component {
   render() {
 
     const { username } = this.props;
-    const allBaskets = JSON.parse(this.state.baskets)
+    const allBaskets = this.state.baskets
 
 
     //pop up logic
+
     let basket = null;
     if (allBaskets) {
-      console.log('all baskets from json :', allBaskets["data"])
-      basket = allBaskets["data"].find((basket) => {
+      console.log('all baskets from json :', allBaskets)
+      console.log(typeof allBaskets)
+      basket = allBaskets.find((basket) => {
         return basket.id === this.state.popup
       })
     }
@@ -78,17 +80,20 @@ class UserView extends React.Component {
     //   basketsRawData = JSON.parse(this.state.baskets)
     // }
 
+    console.log("rendering")
+    console.log(allBaskets)
 
     return (
       <React.Fragment>
 
         <div className="user-view-container container">
         {
-          this.state.popup  === 0 && (
+          (this.state.popup  === 0 && allBaskets) &&  (
             <React.Fragment>
               <h1>hello, bob</h1>
               <h4>baskets near you :</h4>
                <BasketsCarousel baskets={allBaskets} showPopup={this.showPopup} />
+              }
             </React.Fragment>
           )
         }
